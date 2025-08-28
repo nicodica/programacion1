@@ -12,12 +12,12 @@
 using namespace std;
 
 int main(){
-    system("cls");
     system("chcp 65001");
+    system ("cls");
     float gradosC = 0;
     float gradosK = 0;
     
-    cout << "CONVERSOR DE GRADOS CENTÍGRADOS A KELVIN" << endl << "Ingresa los grados centígrados: ";
+    cout << "CONVERSOR DE GRADOS CENTÍGRADOS A KELVIN" << endl << "Ingresa los grados centígrados: "; //Título para indicar el tipo de conversor
     cin >> gradosC;
     gradosK = gradosC + 273.15;
 

@@ -18,10 +18,10 @@ int main(){
     cin >> numero;
 
     if (numero > 0){
-        cout << "El número " << numero << " es positivo";
+        cout << "El número " << numero << " es positivo.";
     } else {
         if (numero < 0){ // IF anidado para determinar si el número es negativo o cero
-            cout << "El número " << numero << " es negativo";
+            cout << "El número " << numero << " es negativo.";
         } else {
             cout << "El número " << numero << " es cero";
         }

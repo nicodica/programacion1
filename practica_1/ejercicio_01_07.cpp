@@ -19,7 +19,8 @@ int main(){
     cin >> letra;
     
     if ((letra >= 'A' && letra <= 'Z') || (letra >= 'a' && letra <= 'z')) {
-        if  (letra == 'a' || letra == 'e' || letra == 'i' || letra == 'o' || letra == 'u'){
+        if  (letra == 'a' || letra == 'e' || letra == 'i' || letra == 'o' || letra == 'u' || 
+            letra == 'A' || letra == 'E' || letra == 'I' || letra == 'O' || letra == 'U'){
             cout << "La letra " << letra << " es una vocal.";
         } else {
             cout << "La letra " << letra << " es una consonante.";

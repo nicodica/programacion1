@@ -13,7 +13,7 @@ int main(){
     system("cls");
     float radio = 0.0;
     float volumen = 0.0;
-    float pi = 3.1416; //constante pi
+    const float pi = 3.1416; //constante pi, no puede modificarse
 
     cout << "VOLUMEN DE UNA ESFERA :]" << endl << "Ingresa el radio de la esfera: ";
     cin >> radio;

@@ -14,9 +14,9 @@ using namespace std;
 int main(){
     system("chcp 65001");
     system("cls");
-    int base = 0;
-    int altura = 0;
-    int area;
+    float base = 0; // Todas la variables son float para que manejen decimales
+    float altura = 0;
+    float area;
 
     cout << "ÁREA DE UN TRIÁNGULO ^_^" << endl << "Ingresa la base del triángulo: ";
     cin >> base;
