@@ -9,6 +9,7 @@
 #include <ctime>
 #include <cstdlib>
 #include <cmath>
+#include <vector>
 
 using namespace std;
 
@@ -26,6 +27,7 @@ int main() {
     int suma=0;
     int producto=1;
     int mayor, posicionFila, posicionColumna;
+    vector <pair<int,int>> mayorCoordenadas;
     double sumaGeneral=0.0;
     double promedio, desviacionEstandar;
     double sumaDesviaciones=0.0;
@@ -58,13 +60,21 @@ int main() {
     mayor = matriz[0][0];
     for (int i=0; i<n; i++) {
         for (int j=0; j<n; j++) {
-            if (matriz[i][j]>mayor) {
+            if (matriz[i][j]>=mayor) {
                 mayor = matriz[i][j];
-                posicionFila = i;
-                posicionColumna = j; 
             }
         }
     }
+    // Obtener las coordenadas
+    for (int i=0; i<n; i++) {
+        for (int j=0; j<n; j++) {
+            if (matriz[i][j]==mayor) {
+                mayorCoordenadas.push_back({i,j});
+            }
+        }
+    }
+
+
     // Calular desviación estándar
     //        SUMA
     for (int i=0; i<n; i++) {
@@ -93,8 +103,20 @@ int main() {
     // Producto última fila
     cout << "PRODUCTO: " << producto << endl;
     // Mayor y posicion
-    cout << "MAYOR: " << mayor << " en la posición ["<<posicionFila<<"]["<<posicionColumna<<"]" << endl;
-    // Desaviación Estándar
+    if (mayorCoordenadas.size()>1) {
+        cout << "MAYOR: " << mayor << " en las posiciones ";
+        for (int i=0; i<mayorCoordenadas.size(); i++) {
+            if (i==(mayorCoordenadas.size()-1)) {
+                cout << "[" <<mayorCoordenadas[i].first<<"]["<<mayorCoordenadas[i].second<<"]";
+            } else {
+                cout << "[" <<mayorCoordenadas[i].first<<"]["<<mayorCoordenadas[i].second<<"], ";
+            }
+        }
+        cout << endl;
+    } else {
+        cout << "MAYOR: " << mayor << " en la posición ["<<mayorCoordenadas[0].first<<"]["<<mayorCoordenadas[0].second<<"]" << endl;
+    }
+    // Desviación Estándar
     cout << "DESVIACIÓN ESTÁNDAR: " << desviacionEstandar << endl;
 
     return 0;
